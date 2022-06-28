@@ -1512,7 +1512,7 @@ static void *gui_thread(void *ptr)
     if (w32->api.pImmDisableIME)
         w32->api.pImmDisableIME(0);
 
-    w32->parent = (HWND)(intptr_t)(w32->opts->WinID);
+    w32->parent = (HWND)(intptr_t)(uint32_t)(w32->opts->WinID);
 
     ATOM cls = get_window_class();
     if (w32->parent) {
